@@ -16,6 +16,15 @@ pluginTester({
         \${theme => theme.foo} \${foobar}
         \${foobar}
         height: 100%;
+        background:  rgba(0, 2, 255, 0.1);
+        
+        ::before {
+          foo: bar;
+        }
+        
+        & > input[ type=text ] {
+          color: blue;
+        }
       \`
     `,
   ],

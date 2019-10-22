@@ -18,8 +18,8 @@ function evaluateMacros({references}) {
     referencePath.parentPath.node.quasi.quasis.forEach(node => {
       result[`${node.loc.start.line}:${node.loc.start.column}`] = node.value.raw
         .replace(/\s{2,}|\n|\t/g, ' ')
-        .replace(/:\s+/g, ':')
-        .replace(/;\s+/g, ';')
+        .replace(/([:;,()[\]{}>+~])\s+/g, '$1')
+        .replace(/\s+([;,()[\]{}>+~])/g, '$1')
         .trim()
     })
     const keys = Object.keys(result)
