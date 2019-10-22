@@ -23,7 +23,7 @@ pluginTester({
         }
         
         & > input[ type=text ] {
-          color: blue;
+          color: blue !important;
         }
       \`
     `,

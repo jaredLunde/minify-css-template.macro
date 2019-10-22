@@ -18,13 +18,13 @@ const someStyle = css\`
   }
   
   & > input[ type=text ] {
-    color: blue;
+    color: blue !important;
   }
 \`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
 const foobar = '';
-const someStyle = \`foo:bar;width:100%;\${theme => theme.foo}\${foobar}\${foobar}height:100%;background:rgba(0,2,255,0.1);::before{foo:bar;}&>input[type=text]{color:blue;}\`;
+const someStyle = \`foo:bar;width:100%;\${theme => theme.foo}\${foobar}\${foobar}height:100%;background:rgba(0,2,255,0.1);::before{foo:bar;}&>input[type=text]{color:blue!important;}\`;
 "
 `;
