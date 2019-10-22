@@ -8,8 +8,8 @@
 
 A babel plugin for removing the whitespace from a CSS-generating tagged template literal while preserving function/variable instances.
 
-## Peer dependencies
-`babel-plugin-macros`
+## Prerequisites
+Using this plugin requires that you are also using `babel-plugin-macros` (included in `create-react-app` by default)
 
 ## Installation
 
