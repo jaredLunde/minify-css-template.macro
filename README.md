@@ -7,7 +7,7 @@
 
 # minify-css.macro
 
-A babel plugin for removing the whitespace from a CSS-generating tagged template literal while preserving functions/variables instances
+A babel plugin for removing the whitespace from a CSS-generating tagged template literal while preserving function/variable instances
 
 ## Installation
 
