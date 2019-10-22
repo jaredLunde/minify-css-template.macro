@@ -1,4 +1,3 @@
-[![bundlephobia](https://img.shields.io/bundlephobia/minzip/minify-css.macro?style=plastic)](https://bundlephobia.com/result?p=minify-css.macro)
 [![codecov](https://codecov.io/gh/jaredLunde/minify-css.macro/branch/master/graph/badge.svg)](https://codecov.io/gh/jaredLunde/minify-css.macro)
 [![Build Status](https://travis-ci.org/jaredLunde/minify-css.macro.svg?branch=master)](https://travis-ci.org/jaredLunde/minify-css.macro)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://jaredlunde.mit-license.org/)
