@@ -1,4 +1,6 @@
 [![bundlephobia](https://img.shields.io/bundlephobia/minzip/minify-css-template.macro?style=plastic)](https://bundlephobia.com/result?p=minify-css-template.macro)
+[![codecov](https://codecov.io/gh/jaredLunde/minify-css-template.macro/branch/master/graph/badge.svg)](https://codecov.io/gh/jaredLunde/minify-css-template.macro)
+[![Build Status](https://travis-ci.org/jaredLunde/minify-css-template.macro.svg?branch=master)](https://travis-ci.org/jaredLunde/minify-css-template.macro)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://jaredlunde.mit-license.org/)
 
 ---
