@@ -13,6 +13,22 @@ A babel plugin for removing the whitespace from a CSS-generating tagged template
 
 #### `yarn add minify-css-template.macro`
 
+## Usage
+
+```js
+// [Input]
+import cleanCss from 'minify-css-template.macro'
+
+const getStyle = theme => cleanCss`
+  text-align: center;
+  font: ${theme.font.primary};
+`
+
+// [Output]
+
+const getStyle = theme => 'text-align:center;font:' + theme.font.primary + ';'
+```
+
 ## LICENSE
 
 MIT

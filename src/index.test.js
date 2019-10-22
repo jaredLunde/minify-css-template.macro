@@ -1,5 +1,22 @@
-const hello = world => `hello ${world}`
+import pluginTester from 'babel-plugin-tester'
+import plugin from 'babel-plugin-macros'
 
-test('passes', () => {
-  expect(hello('world')).toMatchSnapshot()
+pluginTester({
+  plugin,
+  snapshot: true,
+  babelOptions: {filename: __filename},
+  tests: [
+    `
+      import css from './macro'
+      const foobar = ''
+      
+      const someStyle = css\`
+        foo: bar;
+        width: 100%;
+        \${theme => theme.foo} \${foobar}
+        \${foobar}
+        height: 100%;
+      \`
+    `,
+  ],
 })

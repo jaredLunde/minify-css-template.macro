@@ -1,17 +1,17 @@
 {
   "name": "minify-css-template.macro",
-  "version": "1.0.0",
-  "homepage": "https://github.com/jaredLunde/undefined#readme",
-  "repository": "github:jaredLunde/undefined",
-  "bugs": "https://github.com/jaredLunde/undefined/issues",
+  "version": "1.0.3",
+  "homepage": "https://github.com/jaredLunde/minify-css-template.macro#readme",
+  "repository": "github:jaredLunde/minify-css-template.macro",
+  "bugs": "https://github.com/jaredLunde/minify-css-template.macro/issues",
   "author": "Jared Lunde <jared@BeStellar.co> (https://jaredLunde.com)",
   "license": "MIT",
   "description": "A babel plugin for removing the whitespace from a CSS-generating tagged template literal while preserving functions/variables instances",
   "keywords": [
     "minify css template.macro"
   ],
-  "main": "dist/cjs/index.js",
-  "module": "dist/es/index.js",
+  "main": "dist/cjs/macro.js",
+  "module": "dist/es/macro.js",
   "files": [
     "/dist"
   ],
@@ -43,6 +43,7 @@
   "devDependencies": {
     "@lunde/babel-preset-es": "latest",
     "babel-eslint": "latest",
+    "babel-plugin-tester": "^7.0.1",
     "cross-env": "latest",
     "eslint": "latest",
     "eslint-import-resolver-jest": "latest",
@@ -53,6 +54,10 @@
     "prettier": "latest",
     "rimraf": "^2.6.3"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@babel/generator": "^7.6.4",
+    "babel-literal-to-ast": "^2.1.0",
+    "babel-plugin-macros": "^2.6.1"
+  },
   "peerDependencies": {}
 }

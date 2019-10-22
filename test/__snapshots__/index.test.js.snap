@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`macros 1. macros: 1. macros 1`] = `
+"
+import css from './macro'
+const foobar = ''
+
+const someStyle = css\`
+  foo: bar;
+  width: 100%;
+  \${theme => theme.foo} \${foobar}
+  \${foobar}
+  height: 100%;
+\`
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const foobar = '';
+const someStyle = \`foo:bar;width:100%;\${theme => theme.foo}\${foobar}\${foobar}height:100%;\`;
+"
+`;
