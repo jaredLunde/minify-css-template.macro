@@ -12,7 +12,8 @@ const someStyle = css\`
   \${foobar}
   height: 100%;
   background:  rgba(0, 2, 255, 0.1);
-  
+   
+    /* check out my comment */
   ::before {
     foo: bar;
   }
@@ -25,6 +26,6 @@ const someStyle = css\`
       ↓ ↓ ↓ ↓ ↓ ↓
 
 const foobar = '';
-const someStyle = \`foo:bar;width:100%;\${theme => theme.foo}\${foobar}\${foobar}height:100%;background:rgba(0,2,255,0.1);::before{foo:bar;}&>input[type=text]{color:blue!important;}\`;
+const someStyle = \`foo:bar;width:100%;\${theme => theme.foo}\${foobar}\${foobar}height:100%;background:rgba(0,2,255,0.1);/*check out my comment*/::before{foo:bar;}&>input[type=text]{color:blue!important;}\`;
 "
 `;

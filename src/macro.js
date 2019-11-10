@@ -20,6 +20,8 @@ function evaluateMacros({references}) {
         .replace(/\s{2,}|\n|\t/g, ' ')
         .replace(/([:;,()[\]{}>+~/])\s+/g, '$1')
         .replace(/\s+([;,()[\]{}>+~/!])/g, '$1')
+        .replace(/\/\*\s+/, '/*')
+        .replace(/\s+\*\//, '*/')
         .trim()
     })
     const keys = Object.keys(result)

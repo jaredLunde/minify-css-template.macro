@@ -17,7 +17,8 @@ pluginTester({
         \${foobar}
         height: 100%;
         background:  rgba(0, 2, 255, 0.1);
-        
+         
+          /* check out my comment */
         ::before {
           foo: bar;
         }
