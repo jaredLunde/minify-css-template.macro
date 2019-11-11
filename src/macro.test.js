@@ -21,6 +21,7 @@ pluginTester({
           /* check out my comment */
         ::before {
           foo: bar;
+          width: calc(500px + 10px);
         }
         
         & > input[ type=text ] {
