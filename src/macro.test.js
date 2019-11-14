@@ -8,7 +8,8 @@ pluginTester({
   tests: [
     `
       import css from './macro'
-      const foobar = ''
+      const foobar = '', 
+        foo = {mq: () => {}}
       
       const someStyle = css\`
         foo: bar;
@@ -22,6 +23,10 @@ pluginTester({
         ::before {
           foo: bar;
           width: calc(500px + 10px);
+        }
+        
+        @media \${foo.mq('phone')} {
+          width: 30px;
         }
         
         & > input[ type=text ] {

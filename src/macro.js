@@ -22,7 +22,6 @@ function evaluateMacros({references}) {
         .replace(/\s+([;,)\]{}>~/!])/g, '$1')
         .replace(/\/\*\s+/, '/*')
         .replace(/\s+\*\//, '*/')
-        .trim()
     })
     const keys = Object.keys(result)
     keys.sort((a, b) => {
@@ -36,7 +35,10 @@ function evaluateMacros({references}) {
       return a0 - b0
     })
     referencePath.parentPath.replaceWithSourceString(
-      `\`${keys.map(k => result[k]).join('')}\``
+      `\`${keys
+        .map(k => result[k])
+        .join('')
+        .trim()}\``
     )
   })
 }

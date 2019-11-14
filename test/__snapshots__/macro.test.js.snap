@@ -3,7 +3,8 @@
 exports[`macros 1. macros: 1. macros 1`] = `
 "
 import css from './macro'
-const foobar = ''
+const foobar = '', 
+  foo = {mq: () => {}}
 
 const someStyle = css\`
   foo: bar;
@@ -19,6 +20,10 @@ const someStyle = css\`
     width: calc(500px + 10px);
   }
   
+  @media \${foo.mq('phone')} {
+    width: 30px;
+  }
+  
   & > input[ type=text ] {
     color: blue !important;
   }
@@ -26,7 +31,10 @@ const someStyle = css\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const foobar = '';
-const someStyle = \`foo:bar;width:100%;\${theme => theme.foo}\${foobar}\${foobar}height:100%;background:rgba(0,2,255,0.1);/*check out my comment*/::before{foo:bar;width:calc(500px + 10px);}&>input[type=text]{color:blue!important;}\`;
+const foobar = '',
+      foo = {
+  mq: () => {}
+};
+const someStyle = \`foo:bar;width:100%;\${theme => theme.foo} \${foobar} \${foobar} height:100%;background:rgba(0,2,255,0.1);/*check out my comment*/::before{foo:bar;width:calc(500px + 10px);}@media \${foo.mq('phone')}{width:30px;}&>input[type=text]{color:blue!important;}\`;
 "
 `;
