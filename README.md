@@ -29,12 +29,6 @@ A babel plugin for removing the whitespace from a CSS-generating tagged template
 
 Using this plugin requires that you are also using `babel-plugin-macros` (included in `create-react-app` by default)
 
-## Installation
-
-#### `npm i minify-css.macro`
-
-#### `yarn add minify-css.macro`
-
 ## Usage
 
 ```js
