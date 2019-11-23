@@ -1,6 +1,6 @@
 {
   "name": "minify-css.macro",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "homepage": "https://github.com/jaredLunde/minify-css.macro#readme",
   "repository": "github:jaredLunde/minify-css.macro",
   "bugs": "https://github.com/jaredLunde/minify-css.macro/issues",
@@ -8,12 +8,19 @@
   "license": "MIT",
   "description": "A babel plugin for removing the whitespace from a CSS-generating tagged template literal while preserving functions/variables instances",
   "keywords": [
-    "minify css template.macro"
+    "minify css",
+    "babel macro",
+    "babel plugin",
+    "minify css babel plugin",
+    "minify css plugin",
+    "minify css macro"
   ],
   "main": "dist/cjs/macro.js",
   "module": "dist/es/macro.js",
+  "types": "types/macro.d.ts",
   "files": [
-    "/dist"
+    "/dist",
+    "/types"
   ],
   "sideEffects": false,
   "scripts": {
