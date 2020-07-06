@@ -1,6 +1,6 @@
 {
   "name": "minify-css.macro",
-  "version": "0.1.0",
+  "version": "1.0.7",
   "homepage": "https://github.com/jaredLunde/minify-css.macro#readme",
   "repository": "github:jaredLunde/minify-css.macro",
   "bugs": "https://github.com/jaredLunde/minify-css.macro/issues",
@@ -8,7 +8,12 @@
   "license": "MIT",
   "description": "A babel plugin for removing the whitespace from a CSS-generating tagged template literal while preserving functions/variables instances",
   "keywords": [
-    "minify css.macro"
+    "minify css",
+    "babel macro",
+    "babel plugin",
+    "minify css babel plugin",
+    "minify css plugin",
+    "minify css macro"
   ],
   "main": "dist/main/index.js",
   "source": "src/macro.ts",
@@ -39,7 +44,7 @@
     "prerelease": "npm run validate && npm run build",
     "release": "git add . && standard-version -a",
     "test": "lundle build -f cjs && jest",
-    "validate": "lundle check-types && npm run lint && jest --coverage"
+    "validate": "lundle check-types && npm run lint && npm run test -- --coverage"
   },
   "husky": {
     "hooks": {
