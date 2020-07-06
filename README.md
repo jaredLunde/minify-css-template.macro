@@ -33,16 +33,16 @@ Using this plugin requires that you are also using `babel-plugin-macros` (includ
 
 ```js
 // [Input]
-import cleanCss from 'minify-css.macro'
+import css from 'minify-css.macro'
 
-const getStyle = theme => cleanCss`
+const getStyle = (theme) => css`
   text-align: center;
   font: ${theme.font.primary};
 `
 
 // [Output]
 
-const getStyle = theme => 'text-align:center;font:' + theme.font.primary + ';'
+const getStyle = (theme) => 'text-align:center;font:' + theme.font.primary + ';'
 ```
 
 ## LICENSE

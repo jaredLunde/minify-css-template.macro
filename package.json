@@ -1,70 +1,130 @@
 {
   "name": "minify-css.macro",
-  "version": "1.0.6",
+  "version": "0.1.0",
   "homepage": "https://github.com/jaredLunde/minify-css.macro#readme",
   "repository": "github:jaredLunde/minify-css.macro",
   "bugs": "https://github.com/jaredLunde/minify-css.macro/issues",
-  "author": "Jared Lunde <jared@BeStellar.co> (https://jaredLunde.com)",
+  "author": "Jared Lunde <jared.lunde@gmail.com> (https://jaredLunde.com)",
   "license": "MIT",
   "description": "A babel plugin for removing the whitespace from a CSS-generating tagged template literal while preserving functions/variables instances",
   "keywords": [
-    "minify css",
-    "babel macro",
-    "babel plugin",
-    "minify css babel plugin",
-    "minify css plugin",
-    "minify css macro"
+    "minify css.macro"
   ],
-  "main": "dist/cjs/macro.js",
-  "module": "dist/es/macro.js",
-  "types": "types/macro.d.ts",
+  "main": "dist/main/index.js",
+  "source": "src/macro.ts",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/main/index.js",
+      "source": "./src/macro.ts",
+      "types": "./types/index.d.ts",
+      "default": "./dist/main/index.js"
+    },
+    "./package.json": "./package.json",
+    "./": "./"
+  },
   "files": [
     "/dist",
+    "/src",
     "/types"
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "npm run build:cjs && npm run build:es",
-    "build:cjs": "babel src -d dist/cjs -x .js --ignore \"**/*.test.js\",\"**/test.js\" --delete-dir-on-start",
-    "build:es": "cross-env BABEL_ENV=es babel src -d dist/es -x .js --ignore \"**/*.test.js\",\"**/test.js\" --delete-dir-on-start",
-    "format": "prettier --write \"**/*.{js,md,yml,json,babelrc,eslintrc,prettierrc}\"",
-    "lint": "eslint .",
-    "prepublishOnly": "npm run lint && npm run test && npm run build && npm run format",
-    "test": "jest",
-    "validate": "npm run lint && npm run test -- --coverage"
+    "build": "lundle build",
+    "check-types": "lundle check-types",
+    "dev": "lundle build -f module,cjs -w",
+    "format": "prettier --write \"{,!(node_modules|dist|coverage)/**/}*.{ts,js,md,yml,json}\"",
+    "lint": "eslint . --ext .ts",
+    "prerelease": "npm run validate && npm run build",
+    "release": "git add . && standard-version -a",
+    "test": "lundle build -f cjs && jest",
+    "validate": "lundle check-types && npm run lint && jest --coverage"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lundle check-types && lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
-    "**/*.js": [
+    "**/*.{ts,js}": [
       "eslint",
       "prettier --write"
     ],
-    "**/*.{md,yml,json,babelrc,eslintrc,prettierrc}": [
+    "**/*.{md,yml,json}": [
       "prettier --write"
     ]
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "lunde"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "coverage",
+    "dist",
+    "test",
+    "*.config.js"
+  ],
+  "jest": {
+    "moduleDirectories": [
+      "node_modules",
+      "src",
+      "test"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/?(*.)test.ts"
+    ],
+    "collectCoverageFrom": [
+      "**/src/**/*.ts"
+    ],
+    "setupFilesAfterEnv": [
+      "./test/setup.js"
+    ],
+    "snapshotResolver": "./test/resolve-snapshot.js",
+    "globals": {
+      "__DEV__": true
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "bracketSpacing": false
+  },
   "devDependencies": {
-    "@lunde/babel-preset-es": "latest",
-    "babel-eslint": "latest",
-    "babel-plugin-tester": "^7.0.1",
-    "cross-env": "latest",
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
+    "@types/jest": "latest",
+    "babel-jest": "latest",
+    "babel-plugin-tester": "^9.2.0",
+    "cz-conventional-changelog": "^3.2.0",
     "eslint": "latest",
-    "eslint-import-resolver-jest": "latest",
-    "eslint-plugin-jest": "latest",
+    "eslint-config-lunde": "latest",
     "husky": "latest",
     "jest": "latest",
     "lint-staged": "latest",
+    "lundle": "latest",
     "prettier": "latest",
-    "rimraf": "^2.6.3"
+    "standard-version": "^8.0.0",
+    "typescript": "latest"
   },
   "dependencies": {
-    "@babel/generator": "^7.6.4",
+    "@babel/generator": "^7.10.4",
+    "@types/babel-plugin-macros": "^2.8.2",
     "babel-literal-to-ast": "^2.1.0",
-    "babel-plugin-macros": "^2.6.1"
+    "babel-plugin-macros": "^2.8.0"
   },
   "peerDependencies": {}
 }

@@ -7,7 +7,7 @@ pluginTester({
   babelOptions: {filename: __filename},
   tests: [
     `
-      import css from './macro'
+      import css from '../dist/main/macro'
       const foobar = '', 
         foo = {mq: () => {}}
       
