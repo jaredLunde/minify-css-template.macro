@@ -15,16 +15,16 @@
     "minify css plugin",
     "minify css macro"
   ],
-  "main": "dist/main/index.js",
+  "main": "dist/main/macro.js",
   "source": "src/macro.ts",
   "types": "types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/main/index.js",
+      "import": "./dist/esm/macro.mjs",
+      "require": "./dist/main/macro.js",
       "source": "./src/macro.ts",
       "types": "./types/index.d.ts",
-      "default": "./dist/main/index.js"
+      "default": "./dist/main/macro.js"
     },
     "./package.json": "./package.json",
     "./": "./"
