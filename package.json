@@ -23,7 +23,7 @@
       "import": "./dist/esm/macro.mjs",
       "require": "./dist/main/macro.js",
       "source": "./src/macro.ts",
-      "types": "./types/index.d.ts",
+      "types": "./types/macro.d.ts",
       "default": "./dist/main/macro.js"
     },
     "./package.json": "./package.json",
