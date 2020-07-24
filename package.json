@@ -17,7 +17,7 @@
   ],
   "main": "dist/main/macro.js",
   "source": "src/macro.ts",
-  "types": "types/index.d.ts",
+  "types": "types/macro.d.ts",
   "exports": {
     ".": {
       "import": "./dist/esm/macro.mjs",
